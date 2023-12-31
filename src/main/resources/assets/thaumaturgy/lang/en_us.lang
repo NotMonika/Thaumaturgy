@@ -1,0 +1,10 @@
+material.block=%s Block
+material.ingot=%s Ingot
+material.nugget=%s Nugget
+itemGroup.thaumaturgy_things=Thaumaturgy
+fluid.bloodofcells=Blood Of Cell
+tile.thaumaturgy.basicMachine.name=Basic Machine
+
+item.loliMaterialFormat=%1$s%2$s
+
+entitySoul.name=Entity Soul

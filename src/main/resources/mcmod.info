@@ -1,13 +1,13 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "thaumaturgy",
+  "name": "Thaumaturgy",
+  "description": "A Magic but Tech Mod",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["CleanroomMC"],
+  "authorList": ["NotMonika"],
   "credits": "Authors of this project",
   "logoFile": "",
   "screenshots": [],

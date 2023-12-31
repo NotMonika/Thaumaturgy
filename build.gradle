@@ -92,10 +92,16 @@ repositories {
             includeGroup 'curse.maven'
         }
     }
+    /*maven {
+        name "zerocore"
+        url "https://maven.zerono.it/"
+    }*/
+
     mavenLocal() // Must be last for caching to work
 }
 
 dependencies {
+    //implementation "it.zerono.mods.zerocore:zerocore:1.12.2-0.1.2.9"
     if (project.use_assetmover.toBoolean()) {
         implementation 'com.cleanroommc:assetmover:2.5'
     }
