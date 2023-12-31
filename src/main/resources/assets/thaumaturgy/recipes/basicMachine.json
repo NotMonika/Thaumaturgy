@@ -1,0 +1,15 @@
+{
+    "type": "forge:ore_shaped",
+    "group": "thaumaturgy:basicMachine",
+    "result": { "item": "thaumaturgy:basic_machine" },
+    "pattern": [
+        "111",
+        "323",
+        "333"
+    ],
+    "key": {
+        "1": { "item": "thaumaturgy:uflatium_block", "data": 0 },
+        "2": { "item": "thaumaturgy:entity_soul", "data": 6 },
+        "3": { "item": "minecraft:diamond_block", "data": 0 }
+    }
+}
