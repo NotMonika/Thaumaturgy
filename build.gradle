@@ -101,6 +101,7 @@ repositories {
 }
 
 dependencies {
+   // embed "org.reflections:reflections:0.9.12"
     //implementation "it.zerono.mods.zerocore:zerocore:1.12.2-0.1.2.9"
     if (project.use_assetmover.toBoolean()) {
         implementation 'com.cleanroommc:assetmover:2.5'
