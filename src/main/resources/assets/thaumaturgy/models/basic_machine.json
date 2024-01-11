@@ -1,0 +1,11 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "up": "thaumaturgy:blocks/base_machine_up",
+    "down": "thaumaturgy:blocks/base_machine",
+    "west": "thaumaturgy:blocks/base_machine",
+    "north": "thaumaturgy:blocks/base_machine",
+    "east": "thaumaturgy:blocks/base_machine",
+    "south": "thaumaturgy:blocks/base_machine"
+  }
+}

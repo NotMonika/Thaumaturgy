@@ -1,0 +1,11 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "up": "thaumaturgy:blocks/base_machine_up",
+    "down": "minecraft:blocks/coal_block",
+    "west": "minecraft:blocks/coal_block",
+    "north": "minecraft:blocks/coal_block",
+    "east": "minecraft:blocks/coal_block",
+    "south": "minecraft:blocks/coal_block"
+  }
+}

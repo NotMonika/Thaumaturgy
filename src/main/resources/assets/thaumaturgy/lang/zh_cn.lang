@@ -1,0 +1,12 @@
+material.block=%s 块
+material.ingot=%s 锭
+material.nugget=%s 粒
+itemGroup.thaumaturgy_things=奇术学
+fluid.bloodofcells=细胞之血
+tile.thaumaturgy.basicMachine.name=基础机器
+
+item.loliMaterialFormat=%1$s%2$s
+
+entitySoul.name=生物灵魂
+tile.soulabsorber.name=灵魂汲取者
+item.thaumaturgy_communication_gateway.name=奇术通信网关

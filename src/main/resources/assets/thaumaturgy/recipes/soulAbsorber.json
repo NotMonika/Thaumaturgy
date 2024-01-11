@@ -1,0 +1,15 @@
+{
+    "type": "forge:ore_shaped",
+    "group": "thaumaturgy:soulAbsorber",
+    "result": { "item": "thaumaturgy:soulabsorber" },
+    "pattern": [
+        "111",
+        "323",
+        "333"
+    ],
+    "key": {
+        "1": { "item": "minecraft:redstone_block", "data": 0 },
+        "2": { "item": "thaumaturgy:base_machine", "data": 6 },
+        "3": { "item": "minecraft:coal_block", "data": 0 }
+    }
+}

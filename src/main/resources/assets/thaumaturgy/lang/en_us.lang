@@ -8,3 +8,5 @@ tile.thaumaturgy.basicMachine.name=Basic Machine
 item.loliMaterialFormat=%1$s%2$s
 
 entitySoul.name=Entity Soul
+tile.soulabsorber.name=Soul Absorber
+item.thaumaturgy_communication_gateway.name=Thaumaturgy Communication Gateway

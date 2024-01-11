@@ -10,12 +10,12 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemLoliPickaxeMaterial extends Item {
+public class LoopCraftingMaterial extends Item {
 
     private final int subCount;
     private final String name;
 
-    public ItemLoliPickaxeMaterial(String name, int subCount, boolean differentEnd) {
+    public LoopCraftingMaterial(String name, int subCount, boolean differentEnd) {
         this.name=name;
         this.subCount = subCount;
         this.setCreativeTab(ItemRegister.CREATIVE_TAB);

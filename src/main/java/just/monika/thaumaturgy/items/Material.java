@@ -17,6 +17,7 @@ import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.terraingen.OreGenEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
@@ -67,6 +68,7 @@ public class Material {
                 .setRegistryName(Thaumaturgy.modid,translationName+"_block")
                 .setTranslationKey(Thaumaturgy.modid+"."+translationName+"_block")
                 .setCreativeTab(ItemRegister.CREATIVE_TAB);
+        this.block.setHarvestLevel("pickaxe", 2);
         this.blockItem=new ItemBlock(this.block){
             @Override
             public String  getItemStackDisplayName(ItemStack stack){
@@ -195,10 +197,15 @@ public class Material {
             new Material(name.toLowerCase(),new Color(name.hashCode()),name);
         }
         new Material("netherite",Color.DARK_GRAY,"Netherite");
+        new Material("telekill",new Color(0x98fb98),"Telekill Alloy");
     }
 
     public Item getBlockItem() {
         return blockItem;
+    }
+    @SubscribeEvent
+    public static void onOreGen(OreGenEvent.Post event) {
+
     }
 }
 

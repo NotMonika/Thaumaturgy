@@ -3,6 +3,8 @@ package just.monika.thaumaturgy.items;
 import just.monika.thaumaturgy.Thaumaturgy;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -10,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
@@ -21,7 +24,7 @@ import java.util.List;
 @Mod.EventBusSubscriber(modid = "thaumaturgy")
 public final class ItemRegister {
     public static List<Item> items = new ArrayList<>();
-    static Item entitySoul=new ItemLoliPickaxeMaterial("entitySoul",7,false)
+    static Item entitySoul=new LoopCraftingMaterial("entitySoul",7,false)
             .setRegistryName(Thaumaturgy.modid,"entity_soul");
     public static final CreativeTabs CREATIVE_TAB = new CreativeTabs("thaumaturgy_things") {
         // 获得用作标签图标的 ItemStack。你大可以往里面塞各种奇奇怪怪的数据。
@@ -38,9 +41,9 @@ public final class ItemRegister {
                 items.toArray(items.toArray(new Item[0]))
         );
         event.getRegistry().registerAll(
-                entitySoul= new ItemLoliPickaxeMaterial("entitySoul",7,false)
+                entitySoul= new LoopCraftingMaterial("entitySoul",7,false)
                         .setRegistryName(Thaumaturgy.modid,"entity_soul"),
-                new ItemBlock(BasicMachine.self).setRegistryName(BasicMachine.self.getRegistryName())
+                ThaumaturgyCommunicationGateway.self
         );
     }
 
@@ -54,6 +57,15 @@ public final class ItemRegister {
         ModelLoader.setCustomModelResourceLocation(entitySoul, 4, new ModelResourceLocation(entitySoul.getRegistryName(), "inventory"));
         ModelLoader.setCustomModelResourceLocation(entitySoul, 5, new ModelResourceLocation(entitySoul.getRegistryName(), "inventory"));
         ModelLoader.setCustomModelResourceLocation(entitySoul, 6, new ModelResourceLocation(entitySoul.getRegistryName(), "inventory"));
-
+        //ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BasicMachine.self), 0, new ModelResourceLocation(BasicMachine.self.getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(SoulAbsorber.self), 0, new ModelResourceLocation(SoulAbsorber.self.getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(ThaumaturgyCommunicationGateway.self, 0, new ModelResourceLocation(ThaumaturgyCommunicationGateway.self.getRegistryName(), "inventory"));
+    }
+    @SubscribeEvent
+    public static void onLivingDrop(LivingDropsEvent event) {
+        EntityLivingBase entity = event.getEntityLiving();
+        if (entity.world.rand.nextDouble() < 0.6) {
+            event.getDrops().add(new EntityItem(entity.world, entity.posX, entity.posY, entity.posZ, new ItemStack(entitySoul)));
+        }
     }
 }

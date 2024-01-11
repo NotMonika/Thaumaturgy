@@ -1,0 +1,16 @@
+{
+    "type": "forge:ore_shaped",
+    "group": "thaumaturgy:neth",
+    "result": { "item": "thaumaturgy:netherite_nugget",
+        "count": 10
+    },
+    "pattern": [
+        "111",
+        "121",
+        "111"
+    ],
+    "key": {
+        "2": { "item": "thaumaturgy:netherite_ingot", "data": 0 },
+        "1": { "item": "thaumaturgy:entity_soul", "data": 6 }
+    }
+}
