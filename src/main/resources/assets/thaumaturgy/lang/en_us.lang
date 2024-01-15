@@ -1,6 +1,7 @@
 material.block=%s Block
 material.ingot=%s Ingot
 material.nugget=%s Nugget
+material.gear=%s Gear
 itemGroup.thaumaturgy_things=Thaumaturgy
 fluid.bloodofcells=Blood Of Cell
 tile.thaumaturgy.basicMachine.name=Basic Machine

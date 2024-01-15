@@ -7,10 +7,12 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraft.item.crafting.ShapelessRecipes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ColorHandlerEvent;
@@ -39,6 +41,7 @@ public class Material {
     private final Color color;
     private final Item ingot;
     private final Item nugget;
+    private final Item gear;
     private final Block block;
     private final Item blockItem;
 
@@ -75,6 +78,13 @@ public class Material {
                 return I18n.format("material.block",Material.this.name).trim();
             }
         }.setRegistryName(Thaumaturgy.modid,translationName+"_block").setTranslationKey(Thaumaturgy.modid+"."+translationName+"_block").setCreativeTab(ItemRegister.CREATIVE_TAB);
+        this.gear=new Item(){
+            @Override
+            public String  getItemStackDisplayName(ItemStack stack){
+                return I18n.format("material.gear",Material.this.name).trim();
+            }
+        }.setRegistryName(Thaumaturgy.modid,translationName+"_gear")
+                .setCreativeTab(ItemRegister.CREATIVE_TAB);
         materials.add(this);
 
     }
@@ -100,7 +110,12 @@ public class Material {
     @SubscribeEvent
     public static void registerItem(RegistryEvent.Register<Item> event) {
         for(Material material:materials){
-            event.getRegistry().registerAll(material.ingot.setCreativeTab(ItemRegister.CREATIVE_TAB),material.nugget.setCreativeTab(ItemRegister.CREATIVE_TAB),material.blockItem.setCreativeTab(ItemRegister.CREATIVE_TAB));
+            event.getRegistry().registerAll(
+                    material.ingot.setCreativeTab(ItemRegister.CREATIVE_TAB),
+                    material.nugget.setCreativeTab(ItemRegister.CREATIVE_TAB),
+                    material.blockItem.setCreativeTab(ItemRegister.CREATIVE_TAB),
+                    material.gear.setCreativeTab(ItemRegister.CREATIVE_TAB)
+            );
         }
     }
     @SubscribeEvent
@@ -133,6 +148,16 @@ public class Material {
                     new ItemStack(material.nugget,9),
                     Crafting.getB2I((material.ingot))
             ).setRegistryName(material.translationName+"_i2n"));
+            event.getRegistry().register(new ShapedRecipes(
+                    Thaumaturgy.modid,
+                    9,9,
+                    Crafting.getCraft(new ItemStack[]{
+                            ItemStack.EMPTY, material.ingot.getDefaultInstance(),ItemStack.EMPTY,
+                            material.ingot.getDefaultInstance(), Items.NETHERBRICK.getDefaultInstance(),material.ingot.getDefaultInstance(),
+                            ItemStack.EMPTY, material.ingot.getDefaultInstance(),ItemStack.EMPTY
+                    }),
+                    material.gear.getDefaultInstance()
+            ).setRegistryName(material.translationName+"_gear"));
         }
         event.getRegistry().register(new ShapelessRecipes(
                 Thaumaturgy.modid,
@@ -152,10 +177,10 @@ public class Material {
         for(Material material:materials) {
             event.getItemColors().registerItemColorHandler(
                     ((stack, tintIndex) -> material.color.getRGB()),
-                    material.ingot,material.nugget,material.blockItem
+                    material.ingot,material.nugget,material.blockItem,material.gear
             );
         }
-        // 出于某些原因，你还可以在这里拿到之前的 `BlockColors`。在某些时候这个玩意会很有用。
+
         BlockColors blockColorHandler = event.getBlockColors();
     }
     @SubscribeEvent
@@ -166,7 +191,7 @@ public class Material {
                     material.block
             );
         }
-        // 出于某些原因，你还可以在这里拿到之前的 `BlockColors`。在某些时候这个玩意会很有用。
+
         BlockColors blockColorHandler = event.getBlockColors();
     }
     @SubscribeEvent
@@ -174,6 +199,7 @@ public class Material {
     public static void onModelReg(ModelRegistryEvent event) {
         for(Material material:materials){
             ModelLoader.setCustomModelResourceLocation(material.ingot, 0, new ModelResourceLocation(Thaumaturgy.modid+":template/ingot", "inventory"));
+            ModelLoader.setCustomModelResourceLocation(material.gear, 0, new ModelResourceLocation(Thaumaturgy.modid+":template/gear", "inventory"));
             ModelLoader.setCustomModelResourceLocation(material.nugget, 0, new ModelResourceLocation(Thaumaturgy.modid+":template/nugget", "inventory"));
             ModelLoader.setCustomStateMapper(material.block, new StateMapperBase() {
                 @Override

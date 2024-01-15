@@ -1,6 +1,7 @@
 material.block=%s 块
 material.ingot=%s 锭
 material.nugget=%s 粒
+material.gear=%s 齿轮
 itemGroup.thaumaturgy_things=奇术学
 fluid.bloodofcells=细胞之血
 tile.thaumaturgy.basicMachine.name=基础机器

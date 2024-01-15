@@ -28,6 +28,13 @@ public class Crafting {
         ingredients.add(Ingredient.fromItems(item));
         return ingredients;
     }
+    public static NonNullList<Ingredient> getCraft(ItemStack[] stack){
+        NonNullList<Ingredient> ingredients=NonNullList.create();
+        for (ItemStack itemStack :stack){
+            ingredients.add(Ingredient.fromStacks(stack));
+        }
+        return ingredients;
+    }
     @SubscribeEvent
     public static void registerRecipe(RegistryEvent.Register<IRecipe> event){
         for(int i=0;i<6;i++){

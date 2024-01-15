@@ -38,7 +38,6 @@ public class ItemHandler implements IItemHandler {
     @Nonnull
     @Override
     public ItemStack extractItem(int slot, int amount, boolean simulate) {
-        // 仅当对 1 号槽位尝试提取物品时允许听过，否则拒绝提取
         if (ArrayUtils.contains(extractable,slot)) {
             return inventory.extractItem(slot, amount, simulate);
         }

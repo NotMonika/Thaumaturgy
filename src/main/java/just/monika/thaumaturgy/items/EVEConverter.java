@@ -17,7 +17,7 @@ import net.minecraftforge.items.ItemStackHandler;
 
 import javax.annotation.Nonnull;
 
-@Mod.EventBusSubscriber(modid = "thaumaturgy")
+//@Mod.EventBusSubscriber(modid = "thaumaturgy")
 public class EVEConverter extends Block {
     public EVEConverter(){
         super(Material.IRON);

@@ -27,7 +27,7 @@ public final class ItemRegister {
     static Item entitySoul=new LoopCraftingMaterial("entitySoul",7,false)
             .setRegistryName(Thaumaturgy.modid,"entity_soul");
     public static final CreativeTabs CREATIVE_TAB = new CreativeTabs("thaumaturgy_things") {
-        // 获得用作标签图标的 ItemStack。你大可以往里面塞各种奇奇怪怪的数据。
+
         @Override
         public ItemStack createIcon() {
             return new ItemStack(Items.IRON_INGOT);
