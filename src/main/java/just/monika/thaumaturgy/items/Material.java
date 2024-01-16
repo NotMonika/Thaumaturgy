@@ -45,6 +45,9 @@ public class Material {
     private final Block block;
     private final Item blockItem;
 
+    public Material(String translationName,int color,String name){
+        this(translationName,new Color(color),name);
+    }
     public Material(String translationName,Color color){
         this(translationName,color,translationName);
     }
@@ -71,13 +74,16 @@ public class Material {
                 .setRegistryName(Thaumaturgy.modid,translationName+"_block")
                 .setTranslationKey(Thaumaturgy.modid+"."+translationName+"_block")
                 .setCreativeTab(ItemRegister.CREATIVE_TAB);
-        this.block.setHarvestLevel("pickaxe", 2);
+        this.block.setHardness(10)
+                .setHarvestLevel("pickaxe", 2);
         this.blockItem=new ItemBlock(this.block){
             @Override
             public String  getItemStackDisplayName(ItemStack stack){
                 return I18n.format("material.block",Material.this.name).trim();
             }
-        }.setRegistryName(Thaumaturgy.modid,translationName+"_block").setTranslationKey(Thaumaturgy.modid+"."+translationName+"_block").setCreativeTab(ItemRegister.CREATIVE_TAB);
+        }.setRegistryName(Thaumaturgy.modid,translationName+"_block")
+                .setTranslationKey(Thaumaturgy.modid+"."+translationName+"_block")
+                .setCreativeTab(ItemRegister.CREATIVE_TAB);
         this.gear=new Item(){
             @Override
             public String  getItemStackDisplayName(ItemStack stack){
@@ -152,9 +158,9 @@ public class Material {
                     Thaumaturgy.modid,
                     9,9,
                     Crafting.getCraft(new ItemStack[]{
-                            ItemStack.EMPTY, material.ingot.getDefaultInstance(),ItemStack.EMPTY,
+                            null, material.ingot.getDefaultInstance(),null,
                             material.ingot.getDefaultInstance(), Items.NETHERBRICK.getDefaultInstance(),material.ingot.getDefaultInstance(),
-                            ItemStack.EMPTY, material.ingot.getDefaultInstance(),ItemStack.EMPTY
+                            null, material.ingot.getDefaultInstance(),null
                     }),
                     material.gear.getDefaultInstance()
             ).setRegistryName(material.translationName+"_gear"));
@@ -218,13 +224,7 @@ public class Material {
         }
         return null;
     }
-    static {
-        for(String name: names_stage1){
-            new Material(name.toLowerCase(),new Color(name.hashCode()),name);
-        }
-        new Material("netherite",Color.DARK_GRAY,"Netherite");
-        new Material("telekill",new Color(0x98fb98),"Telekill Alloy");
-    }
+
 
     public Item getBlockItem() {
         return blockItem;
@@ -232,6 +232,14 @@ public class Material {
     @SubscribeEvent
     public static void onOreGen(OreGenEvent.Post event) {
 
+    }
+    static {
+        for(String name: names_stage1){
+            new Material(name.toLowerCase(),new Color(name.hashCode()),name);
+        }
+        new Material("netherite",Color.DARK_GRAY,"Netherite");
+        new Material("telekill",0x98fb98,"Telekill Alloy");
+        new Material("bedrockium",Color.GRAY,"Bedrockium");
     }
 }
 

@@ -5,6 +5,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -45,6 +46,7 @@ public final class ItemRegister {
                         .setRegistryName(Thaumaturgy.modid,"entity_soul"),
                 ThaumaturgyCommunicationGateway.self
         );
+        Blocks.BEDROCK.setHardness(1000);
     }
 
     @SideOnly(Side.CLIENT)

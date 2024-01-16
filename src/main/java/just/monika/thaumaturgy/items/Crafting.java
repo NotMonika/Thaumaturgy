@@ -1,6 +1,7 @@
 package just.monika.thaumaturgy.items;
 
 import just.monika.thaumaturgy.Thaumaturgy;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
@@ -31,7 +32,7 @@ public class Crafting {
     public static NonNullList<Ingredient> getCraft(ItemStack[] stack){
         NonNullList<Ingredient> ingredients=NonNullList.create();
         for (ItemStack itemStack :stack){
-            ingredients.add(Ingredient.fromStacks(stack));
+            ingredients.add((itemStack!=null) ? Ingredient.fromStacks(itemStack) : Ingredient.fromItems(Items.AIR));
         }
         return ingredients;
     }
