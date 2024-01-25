@@ -1,5 +1,6 @@
 package just.monika.thaumaturgy.items;
 
+import just.monika.thaumaturgy.ItemsGen;
 import just.monika.thaumaturgy.Thaumaturgy;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -21,6 +22,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Mod.EventBusSubscriber(modid = "thaumaturgy")
 public final class ItemRegister {
@@ -46,6 +48,9 @@ public final class ItemRegister {
                         .setRegistryName(Thaumaturgy.modid,"entity_soul"),
                 ThaumaturgyCommunicationGateway.self
         );
+        event.getRegistry().registerAll(
+                ItemsGen.itemList.toArray(new Item[0])
+        );
         Blocks.BEDROCK.setHardness(1000);
     }
 
@@ -62,6 +67,9 @@ public final class ItemRegister {
         //ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BasicMachine.self), 0, new ModelResourceLocation(BasicMachine.self.getRegistryName(), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(SoulAbsorber.self), 0, new ModelResourceLocation(SoulAbsorber.self.getRegistryName(), "inventory"));
         ModelLoader.setCustomModelResourceLocation(ThaumaturgyCommunicationGateway.self, 0, new ModelResourceLocation(ThaumaturgyCommunicationGateway.self.getRegistryName(), "inventory"));
+        for(Item item : ItemsGen.itemList){
+            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(Objects.requireNonNull(item.getRegistryName()), "inventory"));
+        }
     }
     @SubscribeEvent
     public static void onLivingDrop(LivingDropsEvent event) {

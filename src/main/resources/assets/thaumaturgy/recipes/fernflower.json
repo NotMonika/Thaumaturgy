@@ -1,0 +1,21 @@
+{
+    "type": "forge:ore_shaped",
+    "group": "thaumaturgy:fernflower",
+    "result": { "item": "thaumaturgy:fernflower" },
+    "pattern": [
+        "123",
+        "894",
+        "765"
+    ],
+    "key": {
+        "1": { "item": "minecraft:red_flower", "data": 0 },
+        "2": { "item": "minecraft:red_flower", "data": 1 },
+        "3": { "item": "minecraft:red_flower", "data": 2 },
+        "4": { "item": "minecraft:red_flower", "data": 3 },
+        "5": { "item": "minecraft:red_flower", "data": 4 },
+        "6": { "item": "minecraft:red_flower", "data": 5 },
+        "7": { "item": "minecraft:red_flower", "data": 6 },
+        "8": { "item": "minecraft:red_flower", "data": 7 },
+        "9": { "item": "thaumaturgy:bedrockium_gear", "data": 0 }
+    }
+}

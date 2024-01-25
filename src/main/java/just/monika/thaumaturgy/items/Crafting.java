@@ -1,6 +1,7 @@
 package just.monika.thaumaturgy.items;
 
 import just.monika.thaumaturgy.Thaumaturgy;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -11,6 +12,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod.EventBusSubscriber(modid = "thaumaturgy")
 public class Crafting {
@@ -32,7 +34,7 @@ public class Crafting {
     public static NonNullList<Ingredient> getCraft(ItemStack[] stack){
         NonNullList<Ingredient> ingredients=NonNullList.create();
         for (ItemStack itemStack :stack){
-            ingredients.add((itemStack!=null) ? Ingredient.fromStacks(itemStack) : Ingredient.fromItems(Items.AIR));
+            ingredients.add((itemStack!=null) ? Ingredient.fromStacks(itemStack) : Ingredient.EMPTY);
         }
         return ingredients;
     }
@@ -45,7 +47,7 @@ public class Crafting {
                     new ItemStack(ItemRegister.entitySoul,1,i+1),
                     Crafting.getI2B(new ItemStack(ItemRegister.entitySoul,1,i))
             ).setRegistryName("entitySoul_"+i));
-
         }
+        GameRegistry.addSmelting(Blocks.BEDROCK, Material.get("bedrockium").getIngot().getDefaultInstance(), 10);
     }
 }

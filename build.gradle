@@ -72,6 +72,9 @@ minecraft {
 
 //mixin {add sourceSets.main, mod_id + ".mixins.refmap.json"}
 repositories {
+    //maven { url 'https://maven.aliyun.com/repository/public/' }
+    maven { url 'https://maven.aliyun.com/repository/spring/'}
+
     maven {
         name 'Cleanroom Maven'
         url 'https://maven.cleanroommc.com/'
@@ -97,6 +100,7 @@ dependencies {
 
     annotationProcessor ('com.cleanroommc:sponge-mixin:0.15.3+mixin.0.8.5')
     */
+
 }
 
 jar {
@@ -122,3 +126,5 @@ publishing {
         }
     }
 }
+task("runClient2").dependsOn("build").finalizedBy("runClient").group = "forgegradle runs"
+task("runServer2").dependsOn("build").finalizedBy("runServer").group = "forgegradle runs"

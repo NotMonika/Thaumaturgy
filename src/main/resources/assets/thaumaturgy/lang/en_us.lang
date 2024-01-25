@@ -1,3 +1,4 @@
+#PARSE_ESCAPES
 material.block=%s Block
 material.ingot=%s Ingot
 material.nugget=%s Nugget
@@ -11,3 +12,6 @@ item.loliMaterialFormat=%1$s%2$s
 entitySoul.name=Entity Soul
 tile.soulabsorber.name=Soul Absorber
 item.thaumaturgy_communication_gateway.name=Thaumaturgy Communication Gateway
+item.testitem.name=test
+item.fernflower.name=Fernflower
+information.fernflower=A flower that contains the power of deconstruction

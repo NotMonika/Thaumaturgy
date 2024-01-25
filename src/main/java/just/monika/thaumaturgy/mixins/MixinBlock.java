@@ -49,17 +49,12 @@ public abstract class MixinBlock {
                     return 1;
                 }
 
-                @Override
-                public void breakBlock(World p_180663_1_, BlockPos p_180663_2_, IBlockState p_180663_3_) {
-                    super.breakBlock(p_180663_1_, p_180663_2_, p_180663_3_);
-                    p_180663_1_.spawnEntity(new EntityItem(p_180663_1_, p_180663_2_.getX(), p_180663_2_.getY(), p_180663_2_.getZ(), Item.getItemFromBlock(this).getDefaultInstance()));
-                }
             }
                     .setResistance(6000000.0F)
                     .setSoundType(SoundType.STONE)
                     .setTranslationKey("bedrock")
                     .setCreativeTab(CreativeTabs.BUILDING_BLOCKS)
-                    .setHardness(10);
+                    .setHardness(100);
             p_176219_2_.setHarvestLevel("pickaxe", 2);
         }
         registerBlock(p_176219_0_, new ResourceLocation(p_176219_1_),p_176219_2_);

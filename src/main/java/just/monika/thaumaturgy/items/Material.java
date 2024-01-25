@@ -156,11 +156,11 @@ public class Material {
             ).setRegistryName(material.translationName+"_i2n"));
             event.getRegistry().register(new ShapedRecipes(
                     Thaumaturgy.modid,
-                    9,9,
+                    3,3,
                     Crafting.getCraft(new ItemStack[]{
-                            null, material.ingot.getDefaultInstance(),null,
+                            material.nugget.getDefaultInstance(), material.ingot.getDefaultInstance(),material.nugget.getDefaultInstance(),
                             material.ingot.getDefaultInstance(), Items.NETHERBRICK.getDefaultInstance(),material.ingot.getDefaultInstance(),
-                            null, material.ingot.getDefaultInstance(),null
+                            material.nugget.getDefaultInstance(), material.ingot.getDefaultInstance(),material.nugget.getDefaultInstance()
                     }),
                     material.gear.getDefaultInstance()
             ).setRegistryName(material.translationName+"_gear"));
@@ -240,6 +240,7 @@ public class Material {
         new Material("netherite",Color.DARK_GRAY,"Netherite");
         new Material("telekill",0x98fb98,"Telekill Alloy");
         new Material("bedrockium",Color.GRAY,"Bedrockium");
+        new Material("thaumium",Color.magenta,"Thaumium");
     }
 }
 

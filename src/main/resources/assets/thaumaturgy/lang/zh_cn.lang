@@ -1,3 +1,4 @@
+#PARSE_ESCAPES
 material.block=%s 块
 material.ingot=%s 锭
 material.nugget=%s 粒
@@ -11,3 +12,6 @@ item.loliMaterialFormat=%1$s%2$s
 entitySoul.name=生物灵魂
 tile.soulabsorber.name=灵魂汲取者
 item.thaumaturgy_communication_gateway.name=奇术通信网关
+item.testitem.name=test
+item.fernflower.name=Fernflower
+information.fernflower=蕴含着解构之力的花

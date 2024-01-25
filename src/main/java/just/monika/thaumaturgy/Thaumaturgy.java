@@ -1,21 +1,14 @@
 package just.monika.thaumaturgy;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockEmptyDrops;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
+import net.minecraft.world.DimensionType;
+import net.minecraft.world.WorldProvider;
+import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.EventBus;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Map;
@@ -30,14 +23,23 @@ import java.util.Random;
 public class Thaumaturgy implements IEarlyMixinLoader, IFMLLoadingPlugin
 {
     public static Thaumaturgy INSTANCE = new Thaumaturgy();
+
+    //public static DimensionType myDim;
     public Thaumaturgy(){
 
     }
     public static final String modid = "thaumaturgy";
+    //public static int dimID = new Random(modid.hashCode()).nextInt(Short.MAX_VALUE);
     @Mod.InstanceFactory
     public static Thaumaturgy getInstance(){
         FluidRegistry.enableUniversalBucket();
+        //Items.KNOWLEDGE_BOOK.setCreativeTab(ItemRegister.CREATIVE_TAB);
         return INSTANCE;
+    }
+
+    @Mod.EventHandler
+    public void preInit(FMLPostInitializationEvent event) {
+
     }
 
 
