@@ -2,7 +2,7 @@ package just.monika.thaumaturgy.things.item;
 
 import just.monika.thaumaturgy.Thaumaturgy;
 import just.monika.thaumaturgy.things.item.items.LoopCraftingMaterial;
-import just.monika.thaumaturgy.things.item.items.SoulAbsorber;
+import just.monika.thaumaturgy.things.block.blocks.SoulAbsorber;
 import just.monika.thaumaturgy.things.item.items.ThaumaturgyCommunicationGateway;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;

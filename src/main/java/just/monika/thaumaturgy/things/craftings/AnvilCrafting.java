@@ -13,21 +13,22 @@ public class AnvilCrafting {
     //left,right,output
     public static final Item[][] crafts = {
             {
-                Material.get("uflatium").getIngot(),
-                Items.NETHERBRICK,
-                Material.get("netherite").getIngot()
-            },{
-                Items.BOOK,
-                Material.get("iekrine").getIngot(),
-                Items.KNOWLEDGE_BOOK
-            },
+                    Material.get("uflatium").getIngot(),
+                    Items.NETHERBRICK,
+                    Material.get("netherite").getIngot()
+            }, {
+            Items.BOOK,
+            Material.get("iekrine").getIngot(),
+            Items.KNOWLEDGE_BOOK
+    },
 
 
     };
+
     @SubscribeEvent
-    public static void onAnvilUpdate(AnvilUpdateEvent event){
-        for(Item[] craft : crafts){
-            if((event.getLeft().getItem() == craft[0]) && (event.getRight().getItem() == craft[1])){
+    public static void onAnvilUpdate(AnvilUpdateEvent event) {
+        for (Item[] craft : crafts) {
+            if ((event.getLeft().getItem() == craft[0]) && (event.getRight().getItem() == craft[1])) {
                 event.setOutput(new ItemStack(craft[2]));
                 event.setCost(1);
                 event.setMaterialCost(1);

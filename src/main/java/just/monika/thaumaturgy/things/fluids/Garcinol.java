@@ -25,32 +25,35 @@ import java.awt.*;
 @Mod.EventBusSubscriber(modid = "thaumaturgy")
 public class Garcinol extends Fluid {
     public static Garcinol self = new Garcinol();
-    @GameRegistry.ItemStackHolder(value = "forge:bucketfilled",meta = 0,nbt = "{FluidName:\"garcinol\",Amount: 1000}")
+    @GameRegistry.ItemStackHolder(value = "forge:bucketfilled", meta = 0, nbt = "{FluidName:\"garcinol\",Amount: 1000}")
     public static ItemStack selfStack = null;
 
-    public Garcinol(){
+    public Garcinol() {
         super("garcinol",
-                new ResourceLocation(Thaumaturgy.modid+":blocks/fluid_still"),
-                new ResourceLocation(Thaumaturgy.modid+":blocks/fluid_flow"),
+                new ResourceLocation(Thaumaturgy.modid + ":blocks/fluid_still"),
+                new ResourceLocation(Thaumaturgy.modid + ":blocks/fluid_flow"),
                 Color.yellow);
         setGaseous(true).setDensity(Integer.MAX_VALUE);
 
     }
+
     @SubscribeEvent
-    public static void registrySelf(RegistryEvent.Register<Block> event){
+    public static void registrySelf(RegistryEvent.Register<Block> event) {
         FluidRegistry.registerFluid(self);
         FluidRegistry.addBucketForFluid(self);
-        event.getRegistry().register(new BlockFluidClassic(self,Material.WATER).setRegistryName(Thaumaturgy.modid,self.getName()));
+        event.getRegistry().register(new BlockFluidClassic(self, Material.WATER).setRegistryName(Thaumaturgy.modid, self.getName()));
 
     }
+
     @SubscribeEvent
     public static void regFluidSpirit(TextureStitchEvent.Pre event) {
         TextureMap textureMap = event.getMap();
         textureMap.registerSprite(self.getFlowing());
         textureMap.registerSprite(self.getStill());
     }
+
     @SubscribeEvent
-    public static void regModel(ModelRegistryEvent event){
+    public static void regModel(ModelRegistryEvent event) {
         ModelLoader.setCustomStateMapper(self.getBlock(), new StateMapperBase() {
             @Override
             protected ModelResourceLocation getModelResourceLocation(IBlockState state) {

@@ -1,4 +1,4 @@
-package just.monika.thaumaturgy.things.item.utils;
+package just.monika.thaumaturgy.things.block.utils;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;

@@ -5,8 +5,8 @@ import net.minecraft.item.Item;
 
 //@Mod.EventBusSubscriber(modid = Thaumaturgy.modid)
 public class SelfAnchor extends Item {
-    public SelfAnchor(){
-        setRegistryName(Thaumaturgy.modid,"selfanchor");
+    public SelfAnchor() {
+        setRegistryName(Thaumaturgy.modid, "selfanchor");
     }
 
 }

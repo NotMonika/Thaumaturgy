@@ -17,7 +17,7 @@ public class LoopCraftingMaterial extends Item {
     private final String name;
 
     public LoopCraftingMaterial(String name, int subCount, boolean differentEnd) {
-        this.name=name;
+        this.name = name;
         this.subCount = subCount;
         this.setCreativeTab(ItemRegister.CREATIVE_TAB);
         this.setHasSubtypes(subCount != 1);
@@ -40,7 +40,7 @@ public class LoopCraftingMaterial extends Item {
     @SideOnly(Side.CLIENT)
     public String getItemStackDisplayName(ItemStack stack) {
         if (getHasSubtypes()) {
-            return I18n.format("item.loliMaterialFormat", I18n.format(name + ".name")," x"+(stack.getItemDamage()+1));
+            return I18n.format("item.loliMaterialFormat", I18n.format(name + ".name"), " x" + (stack.getItemDamage() + 1));
         } else {
             return super.getItemStackDisplayName(stack);
         }

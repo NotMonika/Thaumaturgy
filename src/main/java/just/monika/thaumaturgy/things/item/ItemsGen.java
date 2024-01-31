@@ -1,7 +1,6 @@
 package just.monika.thaumaturgy.things.item;
 
 import just.monika.thaumaturgy.Thaumaturgy;
-import just.monika.thaumaturgy.things.item.ItemRegister;
 import net.minecraft.block.Block;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
@@ -56,6 +55,12 @@ public class ItemsGen {
                         .setCreativeTab(ItemRegister.CREATIVE_TAB)
         );
         itemList.add(
+                new Item()
+                        .setRegistryName(Thaumaturgy.modid, "lava_crystal")
+                        .setTranslationKey("lava_crystal")
+                        .setCreativeTab(ItemRegister.CREATIVE_TAB)
+        );
+        itemList.add(
                 new ItemToolEX(114514, 0, Item.ToolMaterial.DIAMOND, new HashSet<>())
                         .setMaxDamage(0)
                         .setNoRepair()
@@ -64,7 +69,7 @@ public class ItemsGen {
                         .setCreativeTab(ItemRegister.CREATIVE_TAB)
         );
         itemList.add(
-                new Item(){
+                new Item() {
                     @Override
                     public boolean hitEntity(ItemStack p_77644_1_, EntityLivingBase p_77644_2_, EntityLivingBase p_77644_3_) {
                         p_77644_2_.setPosition(p_77644_3_.posX, -3, p_77644_3_.posZ);

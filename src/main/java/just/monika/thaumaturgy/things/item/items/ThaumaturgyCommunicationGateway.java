@@ -11,12 +11,14 @@ import net.minecraft.util.NonNullList;
 
 public class ThaumaturgyCommunicationGateway extends Item {
     public static ThaumaturgyCommunicationGateway self = new ThaumaturgyCommunicationGateway();
-    public ThaumaturgyCommunicationGateway(){
+
+    public ThaumaturgyCommunicationGateway() {
         setCreativeTab(ItemRegister.CREATIVE_TAB);
-        setRegistryName(Thaumaturgy.modid,"thaumaturgy_communication_gateway");
+        setRegistryName(Thaumaturgy.modid, "thaumaturgy_communication_gateway");
         setMaxStackSize(1);
         setTranslationKey("thaumaturgy_communication_gateway");
     }
+
     @Override
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> list) {
         if (this.isInCreativeTab(tab)) {

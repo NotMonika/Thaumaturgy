@@ -37,12 +37,12 @@ import java.util.Objects;
 public class Material {
     private static final List<Material> materials = new ArrayList<>();
     public static String[] names_stage1 =
-            {"Quprine","Uglium","Slaithil","Coprelium",
-                    "Notraolium","Ukralt","Voshotrium",
-                    "Oscietrium","Whuathil","Cuchuatrium",
-                    "Shuyrium","Jestaynor","Cosnil","Vuthum",
-                    "Respesium","Befleontine","Snairium","Upluinyx",
-                    "Crualium","Cekrian","Ustium","Iekrine","Gruylium","Uflatium"};
+            {"Quprine", "Uglium", "Slaithil", "Coprelium",
+                    "Notraolium", "Ukralt", "Voshotrium",
+                    "Oscietrium", "Whuathil", "Cuchuatrium",
+                    "Shuyrium", "Jestaynor", "Cosnil", "Vuthum",
+                    "Respesium", "Befleontine", "Snairium", "Upluinyx",
+                    "Crualium", "Cekrian", "Ustium", "Iekrine", "Gruylium", "Uflatium"};
 
     static {
         for (String name : names_stage1) {

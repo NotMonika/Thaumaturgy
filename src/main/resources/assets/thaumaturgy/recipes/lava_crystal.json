@@ -1,0 +1,14 @@
+{
+    "type": "forge:ore_shaped",
+    "group": "thaumaturgy:fernflower",
+    "result": { "item": "thaumaturgy:fernflower" },
+    "pattern": [
+        "111",
+        "191",
+        "111"
+    ],
+    "key": {
+        "1": { "item": "minecraft:magma", "data": 0 },
+        "9": { "item": "thaumaturgy:bedrockium_nugget", "data": 0 }
+    }
+}

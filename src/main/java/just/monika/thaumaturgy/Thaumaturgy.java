@@ -16,18 +16,18 @@ import java.util.Map;
         version = "0.0.0-dev",
         useMetadata = true
 )
-public class Thaumaturgy implements IEarlyMixinLoader, IFMLLoadingPlugin
-{
+public class Thaumaturgy implements IEarlyMixinLoader, IFMLLoadingPlugin {
+    public static final String modid = "thaumaturgy";
     public static Thaumaturgy INSTANCE = new Thaumaturgy();
 
     //public static DimensionType myDim;
-    public Thaumaturgy(){
+    public Thaumaturgy() {
 
     }
-    public static final String modid = "thaumaturgy";
+
     //public static int dimID = new Random(modid.hashCode()).nextInt(Short.MAX_VALUE);
     @Mod.InstanceFactory
-    public static Thaumaturgy getInstance(){
+    public static Thaumaturgy getInstance() {
         FluidRegistry.enableUniversalBucket();
         //Items.KNOWLEDGE_BOOK.setCreativeTab(ItemRegister.CREATIVE_TAB);
         return INSTANCE;
@@ -40,20 +40,29 @@ public class Thaumaturgy implements IEarlyMixinLoader, IFMLLoadingPlugin
 
 
     @Override
-    public String[] getASMTransformerClass() {return new String[0];}
+    public String[] getASMTransformerClass() {
+        return new String[0];
+    }
 
     @Override
-    public String getModContainerClass() {return null;}
+    public String getModContainerClass() {
+        return null;
+    }
 
     @Nullable
     @Override
-    public String getSetupClass() {return null;}
+    public String getSetupClass() {
+        return null;
+    }
 
     @Override
-    public void injectData(Map<String, Object> map) {}
+    public void injectData(Map<String, Object> map) {
+    }
 
     @Override
-    public String getAccessTransformerClass() {return null;}
+    public String getAccessTransformerClass() {
+        return null;
+    }
 
     @Override
     public List<String> getMixinConfigs() {
