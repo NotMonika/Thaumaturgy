@@ -1,4 +1,4 @@
-package just.monika.thaumaturgy.power;
+package just.monika.thaumaturgy.things.power;
 
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;

@@ -1,4 +1,4 @@
-package just.monika.thaumaturgy.fluid;
+package just.monika.thaumaturgy.things.fluids;
 
 import just.monika.thaumaturgy.Thaumaturgy;
 import net.minecraft.block.Block;
@@ -7,6 +7,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.client.renderer.texture.TextureMap;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.event.TextureStitchEvent;
@@ -17,18 +18,21 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import java.awt.*;
 
 @Mod.EventBusSubscriber(modid = "thaumaturgy")
-public class BloodOfCells extends Fluid {
-    public static BloodOfCells self = new BloodOfCells();
+public class Garcinol extends Fluid {
+    public static Garcinol self = new Garcinol();
+    @GameRegistry.ItemStackHolder(value = "forge:bucketfilled",meta = 0,nbt = "{FluidName:\"garcinol\",Amount: 1000}")
+    public static ItemStack selfStack = null;
 
-    public BloodOfCells(){
-        super("bloodofcells",
+    public Garcinol(){
+        super("garcinol",
                 new ResourceLocation(Thaumaturgy.modid+":blocks/fluid_still"),
                 new ResourceLocation(Thaumaturgy.modid+":blocks/fluid_flow"),
-                Color.red);
+                Color.yellow);
         setGaseous(true).setDensity(Integer.MAX_VALUE);
 
     }
@@ -50,7 +54,7 @@ public class BloodOfCells extends Fluid {
         ModelLoader.setCustomStateMapper(self.getBlock(), new StateMapperBase() {
             @Override
             protected ModelResourceLocation getModelResourceLocation(IBlockState state) {
-                return new ModelResourceLocation(new ResourceLocation(Thaumaturgy.modid, "bloodofcells"), "bloodofcells");
+                return new ModelResourceLocation(new ResourceLocation(Thaumaturgy.modid, "garcinol"), "garcinol");
             }
         });
     }

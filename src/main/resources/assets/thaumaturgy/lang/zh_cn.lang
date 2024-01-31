@@ -5,6 +5,7 @@ material.nugget=%s 粒
 material.gear=%s 齿轮
 itemGroup.thaumaturgy_things=奇术学
 fluid.bloodofcells=细胞之血
+fluid.garcinol=山竹醇
 tile.thaumaturgy.basicMachine.name=基础机器
 
 item.loliMaterialFormat=%1$s%2$s
@@ -14,4 +15,8 @@ tile.soulabsorber.name=灵魂汲取者
 item.thaumaturgy_communication_gateway.name=奇术通信网关
 item.testitem.name=test
 item.fernflower.name=Fernflower
+item.powercore.name=能量核心
+item.powercore_powered.name=能量核心（已充能）
+item.sword1.name=晓破剑
+item.void_axe.name=虚空之斧
 information.fernflower=蕴含着解构之力的花

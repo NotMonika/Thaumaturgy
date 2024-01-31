@@ -1,8 +1,5 @@
 package just.monika.thaumaturgy;
 
-import net.minecraft.world.DimensionType;
-import net.minecraft.world.WorldProvider;
-import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -12,7 +9,6 @@ import zone.rong.mixinbooter.IEarlyMixinLoader;
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 @Mod(
         modid = Thaumaturgy.modid,

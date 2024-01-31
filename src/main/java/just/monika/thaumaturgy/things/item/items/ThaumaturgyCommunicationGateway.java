@@ -1,15 +1,13 @@
-package just.monika.thaumaturgy.items;
+package just.monika.thaumaturgy.things.item.items;
 
 import just.monika.thaumaturgy.Thaumaturgy;
+import just.monika.thaumaturgy.things.item.ItemRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
-import net.minecraftforge.fml.common.Mod;
-
-import java.util.List;
 
 public class ThaumaturgyCommunicationGateway extends Item {
     public static ThaumaturgyCommunicationGateway self = new ThaumaturgyCommunicationGateway();

@@ -1,7 +1,9 @@
-package just.monika.thaumaturgy.items;
+package just.monika.thaumaturgy.things.item;
 
-import just.monika.thaumaturgy.ItemsGen;
 import just.monika.thaumaturgy.Thaumaturgy;
+import just.monika.thaumaturgy.things.item.items.LoopCraftingMaterial;
+import just.monika.thaumaturgy.things.item.items.SoulAbsorber;
+import just.monika.thaumaturgy.things.item.items.ThaumaturgyCommunicationGateway;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
@@ -9,7 +11,6 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -26,9 +27,6 @@ import java.util.Objects;
 
 @Mod.EventBusSubscriber(modid = "thaumaturgy")
 public final class ItemRegister {
-    public static List<Item> items = new ArrayList<>();
-    static Item entitySoul=new LoopCraftingMaterial("entitySoul",7,false)
-            .setRegistryName(Thaumaturgy.modid,"entity_soul");
     public static final CreativeTabs CREATIVE_TAB = new CreativeTabs("thaumaturgy_things") {
 
         @Override
@@ -36,6 +34,9 @@ public final class ItemRegister {
             return new ItemStack(Items.IRON_INGOT);
         }
     };
+    public static List<Item> items = new ArrayList<>();
+    public static Item entitySoul = new LoopCraftingMaterial("entitySoul", 7, false)
+            .setRegistryName(Thaumaturgy.modid, "entity_soul");
 
     @SubscribeEvent
     public static void registerItem(RegistryEvent.Register<Item> event) {
@@ -44,8 +45,8 @@ public final class ItemRegister {
                 items.toArray(items.toArray(new Item[0]))
         );
         event.getRegistry().registerAll(
-                entitySoul= new LoopCraftingMaterial("entitySoul",7,false)
-                        .setRegistryName(Thaumaturgy.modid,"entity_soul"),
+                entitySoul = new LoopCraftingMaterial("entitySoul", 7, false)
+                        .setRegistryName(Thaumaturgy.modid, "entity_soul"),
                 ThaumaturgyCommunicationGateway.self
         );
         event.getRegistry().registerAll(
@@ -67,10 +68,11 @@ public final class ItemRegister {
         //ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BasicMachine.self), 0, new ModelResourceLocation(BasicMachine.self.getRegistryName(), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(SoulAbsorber.self), 0, new ModelResourceLocation(SoulAbsorber.self.getRegistryName(), "inventory"));
         ModelLoader.setCustomModelResourceLocation(ThaumaturgyCommunicationGateway.self, 0, new ModelResourceLocation(ThaumaturgyCommunicationGateway.self.getRegistryName(), "inventory"));
-        for(Item item : ItemsGen.itemList){
+        for (Item item : ItemsGen.itemList) {
             ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(Objects.requireNonNull(item.getRegistryName()), "inventory"));
         }
     }
+
     @SubscribeEvent
     public static void onLivingDrop(LivingDropsEvent event) {
         EntityLivingBase entity = event.getEntityLiving();

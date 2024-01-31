@@ -1,5 +1,6 @@
-package just.monika.thaumaturgy.items;
+package just.monika.thaumaturgy.things.craftings;
 
+import just.monika.thaumaturgy.things.Material;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

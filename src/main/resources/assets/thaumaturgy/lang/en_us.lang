@@ -5,6 +5,7 @@ material.nugget=%s Nugget
 material.gear=%s Gear
 itemGroup.thaumaturgy_things=Thaumaturgy
 fluid.bloodofcells=Blood Of Cell
+fluid.garcinol=Garcinol
 tile.thaumaturgy.basicMachine.name=Basic Machine
 
 item.loliMaterialFormat=%1$s%2$s
@@ -14,4 +15,8 @@ tile.soulabsorber.name=Soul Absorber
 item.thaumaturgy_communication_gateway.name=Thaumaturgy Communication Gateway
 item.testitem.name=test
 item.fernflower.name=Fernflower
+item.powercore.name=Power Core
+item.powercore_powered.name=Powered Power Core
+item.sword1.name=EZ Sword
+item.void_axe.name=Void Axe
 information.fernflower=A flower that contains the power of deconstruction

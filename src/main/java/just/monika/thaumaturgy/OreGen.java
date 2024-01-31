@@ -1,6 +1,6 @@
 package just.monika.thaumaturgy;
 
-import just.monika.thaumaturgy.items.Material;
+import just.monika.thaumaturgy.things.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;

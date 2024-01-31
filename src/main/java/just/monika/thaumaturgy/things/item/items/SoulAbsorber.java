@@ -1,7 +1,8 @@
-package just.monika.thaumaturgy.items;
+package just.monika.thaumaturgy.things.item.items;
 
 import just.monika.thaumaturgy.Thaumaturgy;
-import just.monika.thaumaturgy.utils.ItemHandler;
+import just.monika.thaumaturgy.things.item.ItemRegister;
+import just.monika.thaumaturgy.things.item.utils.ItemHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

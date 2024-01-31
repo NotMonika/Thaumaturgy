@@ -1,4 +1,4 @@
-package just.monika.thaumaturgy.power;
+package just.monika.thaumaturgy.things.power;
 
 public record ThaumaturgyRecord(
         double intensity,

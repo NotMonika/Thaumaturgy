@@ -1,8 +1,8 @@
-package just.monika.thaumaturgy.items;
+package just.monika.thaumaturgy.things.block.blocks;
 
 import just.monika.thaumaturgy.Thaumaturgy;
-import just.monika.thaumaturgy.power.EVE;
-import just.monika.thaumaturgy.utils.ItemHandler;
+import just.monika.thaumaturgy.things.power.EVE;
+import just.monika.thaumaturgy.things.item.utils.ItemHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -11,7 +11,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 

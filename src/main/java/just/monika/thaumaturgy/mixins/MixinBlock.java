@@ -1,17 +1,12 @@
 package just.monika.thaumaturgy.mixins;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockEmptyDrops;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -30,7 +25,7 @@ public abstract class MixinBlock {
             method = "registerBlocks()V",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/block/Block;registerBlock(ILjava/lang/String;Lnet/minecraft/block/Block;)V")
     )
-    private static void redirectRegisterBlocks(int p_176219_0_, String p_176219_1_, Block p_176219_2_){
+    private static void redirectRegisterBlocks(int p_176219_0_, String p_176219_1_, Block p_176219_2_) {
         if (p_176219_1_.equals("bedrock")) {
             p_176219_2_ = new Block(Material.ROCK) {
                 @Nonnull
@@ -57,7 +52,7 @@ public abstract class MixinBlock {
                     .setHardness(100);
             p_176219_2_.setHarvestLevel("pickaxe", 2);
         }
-        registerBlock(p_176219_0_, new ResourceLocation(p_176219_1_),p_176219_2_);
+        registerBlock(p_176219_0_, new ResourceLocation(p_176219_1_), p_176219_2_);
     }
 
     @Shadow

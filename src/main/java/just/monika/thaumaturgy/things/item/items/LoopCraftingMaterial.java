@@ -1,6 +1,7 @@
-package just.monika.thaumaturgy.items;
+package just.monika.thaumaturgy.things.item.items;
 
 import just.monika.thaumaturgy.Thaumaturgy;
+import just.monika.thaumaturgy.things.item.ItemRegister;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;

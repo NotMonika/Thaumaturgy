@@ -85,12 +85,20 @@ repositories {
     maven {
         url "https://maven.outlands.top/releases/"
     }
+    maven {
+        name 'CurseMaven'
+        url 'https://cursemaven.com'
+        content {
+            includeGroup 'curse.maven'
+        }
+    }
 
     mavenCentral()
 }
 
 dependencies {
     minecraft "com.cleanroommc:cleanroom:${cleanroom_version}"
+    implementation 'curse.maven:modularui-624243:4786372-sources-4786373'
     // Use this if you want regular Forge
     //minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     /*

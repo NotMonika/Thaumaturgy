@@ -1,4 +1,4 @@
-package just.monika.thaumaturgy.utils;
+package just.monika.thaumaturgy.things.item.utils;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
@@ -12,41 +12,47 @@ public class ItemHandler implements IItemHandler {
     private final int[] insertable;
     private final int[] extractable;
 
-    public ItemHandler(ItemStackHandler inventory, int[] insertable, int[] extractable){
+    public ItemHandler(ItemStackHandler inventory, int[] insertable, int[] extractable) {
 
         this.inventory = inventory;
         this.insertable = insertable;
         this.extractable = extractable;
     }
+
     @Override
     public int getSlots() {
         return inventory.getSlots();
     }
+
     @Nonnull
     @Override
     public ItemStack getStackInSlot(int slot) {
         return inventory.getStackInSlot(slot);
     }
+
     @Nonnull
     @Override
     public ItemStack insertItem(int slot, @Nonnull ItemStack stack, boolean simulate) {
-        if (ArrayUtils.contains(insertable,slot)) {
+        if (ArrayUtils.contains(insertable, slot)) {
             return inventory.insertItem(slot, stack, simulate);
         }
         return stack;
     }
+
     @Nonnull
     @Override
     public ItemStack extractItem(int slot, int amount, boolean simulate) {
-        if (ArrayUtils.contains(extractable,slot)) {
+        if (ArrayUtils.contains(extractable, slot)) {
             return inventory.extractItem(slot, amount, simulate);
         }
         return ItemStack.EMPTY;
     }
+
     @Override
     public int getSlotLimit(int slot) {
         return inventory.getSlotLimit(slot);
     }
+
     @Override
     public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
         return false;

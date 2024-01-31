@@ -1,0 +1,16 @@
+{
+    "type": "forge:ore_shaped",
+    "group": "thaumaturgy:powercore",
+    "result": { "item": "thaumaturgy:powercore",
+        "count": 1
+    },
+    "pattern": [
+        "111",
+        "121",
+        "111"
+    ],
+    "key": {
+        "2": { "item": "thaumaturgy:bedrockium_gear", "data": 0 },
+        "1": { "item": "thaumaturgy:fernflower", "data": 0 }
+    }
+}

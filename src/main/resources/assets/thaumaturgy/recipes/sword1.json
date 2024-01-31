@@ -1,0 +1,17 @@
+{
+    "type": "forge:ore_shaped",
+    "group": "thaumaturgy:sword1",
+    "result": { "item": "thaumaturgy:sword1",
+        "count": 1
+    },
+    "pattern": [
+        "  1",
+        " 2 ",
+        "3  "
+    ],
+    "key": {
+        "1": { "item": "thaumaturgy:bedrockium_gear", "data": 0 },
+        "2": { "item": "thaumaturgy:powercore_powered", "data": 0 },
+        "3": { "item": "minecraft:diamond", "data": 0 }
+    }
+}

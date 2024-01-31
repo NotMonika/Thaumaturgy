@@ -1,0 +1,11 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "garcinol": {
+      "model": "forge:fluid",
+      "custom": {
+        "fluid": "garcinol"
+      }
+    }
+  }
+}
